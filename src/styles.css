@@ -1,0 +1,412 @@
+.search-input {
+    position: relative;
+    text-align: center;
+    width: 240px;
+    margin-left: -25px;
+    top: 175px;
+    border-radius: 10px;
+    background-color: #99ff99;
+    color: black;
+}
+
+/*-----------------------GENERAL--------------------------*/
+.App {
+    font-family: sans-serif;
+    margin: 0px;
+    background-color: #09a8ff;
+    background-blend-mode: normal;
+}
+
+body {
+    background-color: #09a8ff !important;
+}
+
+/*-----------------------ESTRUCTURA--------------------------*/
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 600px;
+    background-color: #09a8ff;
+    justify-content: center;
+    margin-bottom: 10%;
+    margin-top: 3%;
+}
+.pokedex-left {
+    width: 410px;
+    height: 547px;
+    background-image: url("../src/images/pokedex/left.png");
+    text-align: center;
+}
+.pokedex-right {
+    width: 341px;
+    height: 487px;
+    margin-top: 42px;
+    background-image: url("../src/images/pokedex/right.png");
+}
+
+/*-----------------------PARTE DERECHA--------------------------*/
+
+
+.types-box {
+    list-style: none inside;
+    display: flex;
+    justify-content: end;
+    margin-top: 19%;
+    padding-top: 22%;
+    scale: 30%;
+    margin-left: 67%;
+
+}
+.type-card {
+    margin-top: -15%;
+}
+.stats-title {
+    text-shadow: 2px 2px 5px #14cc39db;
+    text-align: left;
+    display: block;
+    margin-top: -16%;
+    padding-left: 16%;
+}
+.stats-box {
+    grid-template-rows: 15px 15px 15px 15px 15px 15px;
+    list-style: none inside;
+    display: grid;
+    padding-left: 16%;
+}
+.stat-name {
+    padding: 0;
+    font-size: 15px;
+    text-shadow: 2px 2px 5px #14cc39db;
+    text-align: left;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    color: black;
+}
+.stat-value {
+    padding: 0;
+    font-size: 15px;
+    text-shadow: 2px 2px 5px #14cc39db;
+    margin-right: 18%;
+    margin-top: -35px;
+    text-align: right;
+    letter-spacing: 3px;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    color: black;
+}
+
+.numpad-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    width: 76%;
+    height: 100%;
+    margin-left: 12.3%;
+    margin-top: -2%;
+
+}
+
+.btn-numpad {
+    position: relative;
+    background-color: rgb(0, 172, 254);
+    border-color: #13141a;
+    border-radius: 3px;
+    border-width: 2px;
+    height: 100%;
+    grid-gap: 0px;
+    align-self: center;
+    font-size: 20px;
+    text-shadow: 0px 2px 2px #13141a;
+}
+
+.btn-numpad:hover {
+    background-color: rgb(46, 187, 255);
+    border-color: #13141a;
+}
+
+.btn-return {
+    position: relative;
+    left: 72%;
+    top: 45%;
+    border-radius: 100%;
+    border-width: 2px;
+    font-size: 20px;
+    background-color: #f7fb00;
+    border-color: #0b0c15;
+    color: #ff0001;
+    width: 35px;
+    height: 35px;
+}
+
+/*-----------------------PARTE IZQUIERDA--------------------------*/
+
+/*-----------------------DISPLAY--------------------------*/
+.figure-img {
+    position: relative;
+    left: -4%;
+    top: 47%;
+    scale: 1.5;
+    -webkit-animation: scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation-duration: .5s;
+    animation-iteration-count: 1;
+    user-select: none
+}
+.pokemon-name {
+    position: relative;
+    top: 50%;
+    left: -4%;
+    font-size: 18px;
+    text-shadow: 2px 2px 5px #14cc39db;
+    letter-spacing: 3px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.pokemon-id {
+    position: relative;
+    top: -5.8%;
+    left: 21%;
+    font-size: 16px;
+    /*text-shadow: 1px 1px 2px #13141a;*/
+    text-shadow: 2px 2px 5px #14cc39db;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+.pokemon-gender {
+    position: relative;
+    top: 3%;
+    left: -30%;
+    font-size: 25px;
+    -moz-window-dragging: false;
+}
+.pokemon-shiny {
+    position: relative;
+    top: 23%;
+    left: -30%;
+    font-size: 25px;
+    user-select: none
+}
+.pokemon-front {
+    position: relative;
+    display: block;
+    top: -28%;
+    left: 23%;
+    font-size: 35px;
+    user-select: none
+}
+/*-----------------------BOTONES--------------------------*/
+.btn-rotate {
+    position: relative;
+    left: -44.7%;
+    top: 7.2%;
+    border-radius: 100%;
+    font-size: 25px;
+    padding: 0;
+    background-color: #32323a;
+    border-color: #0b0c15;
+    color: #f0f0f0;
+    width: 40px;
+    height: 40px;
+}
+.btn-shiny {
+    left: -3%;
+    top: -5%;
+    background-color: #ff4500;
+    position: relative;
+    border-radius: 10px;
+    border-color: #13141a;
+    border-width: 2px;
+    width: 12.5%;
+    height: 14px;
+}
+.btn-gender {
+    float: start;
+    top: -5%;
+    background-color: rgb(0, 102, 255);
+    position: relative;
+    border-radius: 10px;
+    border-color: #13141a;
+    border-width: 2px;
+    width: 12.5%;
+    height: 14px;
+}
+.btn-gender:hover {
+    background-color: rgb(53, 134, 255);
+}
+.btn-up {
+    top: 11%;
+    left: 6.5%;
+    position: relative;
+    background-color: #32323a;
+    border-width: 0px;
+    padding: 0;
+}
+.btn-down {
+    top: 40%;
+    left: 2.5%;
+    position: relative;
+    background-color: #32323a;
+    border-width: 0px;
+    padding: 0;
+    width: 15px;
+    height: 25px;
+}
+.btn-left {
+    top: 18px;
+    left: 19%;
+    position: relative;
+    text-align: start;
+    background-color: #32323a;
+    border-width: 0px;
+    padding: 0;
+    width: 25px;
+    height: 15px;
+}
+.btn-right {
+    top: 18px;
+    left: 25%;
+    position: relative;
+    text-align: end;
+    background-color: #32323a;
+    border-width: 0px;
+    padding: 0;
+    width: 25px;
+    height: 15px;
+}
+/*-----------------------DISPLAY INFERIOR IZQUIERDO--------------------------*/
+.text-box {
+    /* text-shadow: 1px 1px 2px #13141a; */
+    text-shadow: 2px 2px 5px #14cc39db;
+    text-align: center;
+    display: flex;
+    margin-top: -4%;
+    width: 35%;
+    height: 50%;
+    margin-left: 22%;
+    font-size: 12px;
+    resize: none;
+    overflow-block: auto;
+}
+
+/*-----------------------FOOTER--------------------------*/
+footer {
+    font-family: inherit;
+    background-color: #363636;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+footer a {
+    color: #e58112;
+}
+
+/*-----------------------ANIMACIONES--------------------------*/
+
+@keyframes pokemon-image {
+    0% {
+        top: 45%;
+        filter: blur();
+        filter: invert();
+        scale: 0.5;
+        transform: rotate3d(0, 0, 1, -270deg);
+    }
+
+    100% {
+        scale: 1.7;
+        transform: rotate3d(0, 0, 1, 0deg);
+        top: 45%;
+    }
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        filter: grayscale(100%);
+        filter: blur(60px);
+        transform: skew(-90deg, 0deg);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        filter: grayscale(0%);
+        filter: blur(0px);
+        transform: skew(0deg, 0deg);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        filter: grayscale(100%);
+        filter: blur(60px);
+        transform: skew(-90deg, 0deg);
+
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        filter: grayscale(0%);
+        filter: blur(0px);
+        transform: skew(0deg, 0deg);
+
+    }
+}
+
+@keyframes loading {
+    0% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+
+    10% {
+        transform: rotate3d(0, 0, 1, 18deg);
+    }
+
+    20% {
+        transform: rotate3d(0, 0, 1, 36deg);
+    }
+
+    30% {
+        transform: rotate3d(0, 0, 1, 54deg);
+    }
+
+    40% {
+        transform: rotate3d(0, 0, 1, 72deg);
+    }
+
+    50% {
+        transform: rotate3d(0, 0, 1, 90deg);
+        scale: 1.4;
+    }
+
+    60% {
+        transform: rotate3d(0, 0, 1, 108deg);
+    }
+
+    70% {
+        transform: rotate3d(0, 0, 1, 126deg);
+    }
+
+    80% {
+        transform: rotate3d(0, 0, 1, 144deg);
+    }
+
+    90% {
+        transform: rotate3d(0, 0, 1, 162deg);
+    }
+
+    100% {
+        transform: rotate3d(0, 0, 1, 180deg);
+    }
+}
+
+
+
+
