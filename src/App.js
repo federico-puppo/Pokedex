@@ -1,8 +1,9 @@
 import React from "react";
-import './styles.css';
+import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pokedex from "./components/Pokedex";
 import Footer from "./components/Footer";
+import NavBar from "./components/NavBar";
 
 
 function App() {
@@ -11,7 +12,11 @@ function App() {
 
     useEffect(() => {
         document.addEventListener('keydown', detectKeyDown, true)
-        document.addEventListener('keyup', clearKey, true)
+        document.addEventListener('keyup', clearKey, true)        
+        return () => {
+            document.removeEventListener('keydown', detectKeyDown)
+            document.removeEventListener('keyup', clearKey)
+        }
     }, []);
 
 
@@ -34,10 +39,8 @@ function App() {
     return (
         <>
             <div className="App">
-                <h1 style={{ textAlign: "center" }}>Pokedex</h1>
+                <NavBar/>
                 <Pokedex keys={key} />
-            </div>
-            <div>
                 <Footer />
             </div>
         </>

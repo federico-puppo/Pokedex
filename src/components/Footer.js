@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
-import pokeballIcon from '../images/pokedex/pokeball_icon.png'
+import pokeballIcon from '../images/pokedex/pokeballLogo.svg'
 
 const Footer = () => (
   <>

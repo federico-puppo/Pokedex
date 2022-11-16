@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="128 128 256 256" xmlns="http://www.w3.org/2000/svg">
+  <ellipse style="stroke: rgb(0, 0, 0); stroke-width: 2px; fill: rgb(117, 208, 193);" cx="256" cy="256" rx="128" ry="128"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 305.476 172.318 L 306.082 225.529 L 259.671 247.808 L 259.099 197.567 L 305.476 172.318 Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 352 256.164 L 306.057 282.444 L 260.086 256.123 L 306.033 231.988 L 352 256.164 Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 251.914 256.164 L 205.971 282.444 L 160 256.123 L 205.947 231.988 L 251.914 256.164 Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 205.454 172.1 L 253.14 195.717 L 251.921 247.184 L 206.897 224.885 L 205.454 172.1 Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 306.774 339.424 L 259.088 315.806 L 260.307 264.339 L 305.331 286.639 L 306.774 339.424 Z" fill="white"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M 207.101 339.902 L 206.495 286.692 L 252.906 264.413 L 253.479 314.653 L 207.101 339.902 Z" fill="white"/>
+</svg>

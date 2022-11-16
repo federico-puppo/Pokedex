@@ -1,5 +1,6 @@
-import { getPokemonEvos, getPokemonEvolutionChain } from "../Api"
-import pokeball from '../images/pokedex/pokeball_icon.png';
+import { getPokemonEvos, getPokemonId, getPokemonEvolutionChain } from "../Api"
+import pokeball from '../images/pokedex/pokeballLogo.png'
+
 
 const Pokemon = async (pokemon) => {
     const name = pokemon.species.name
@@ -105,7 +106,7 @@ const Pokemon = async (pokemon) => {
         if (evolution_chain !== null) {
             evolutionChainUrl = evolution_chain.url;
             let evos = await getPokemonEvolutionChain(evolutionChainUrl)
-            console.log(evos);
+            //console.log(evos);
 
             ////CHECK IF HAS NO EVOLUTION:
             if (evos.chain.evolves_to.length === 0) {
@@ -116,16 +117,16 @@ const Pokemon = async (pokemon) => {
             else if (evos.chain.evolves_to.length === 1) {
                 // IS BABY?
                 if (evos.chain.is_baby) {
-                    const id = evos.chain.species.url.slice(-4).replace("/", "").replace("/", "");
                     const name = evos.chain.species.name
+                    const id = await getPokemonId(name)
                     console.log("TIENE BEBE: " + name + " ID: " + id);
                     const pokemon = { name, id }
                     evolutions.push(pokemon)
 
                     //BASE POKEMON
                 } else {
-                    const id = evos.chain.species.url.slice(-4).replace("/", "").replace("/", "");
                     const name = evos.chain.species.name
+                    const id = await getPokemonId(name)
                     console.log("POKEMON BASE: " + name + " ID: " + id);
                     const pokemon = { name, id }
                     evolutions.push(pokemon)
@@ -133,8 +134,8 @@ const Pokemon = async (pokemon) => {
                 }
 
                 //FIRST EVOLUTION:
-                const id = evos.chain.evolves_to[0].species.url.slice(-4).replace("/", "").replace("/", "");
                 const name = evos.chain.evolves_to[0].species.name
+                const id = await getPokemonId(name)
                 console.log("1° EVOLUCION: " + name + " ID: " + id);
                 const pokemon = { name, id }
                 evolutions.push(pokemon)
@@ -142,8 +143,8 @@ const Pokemon = async (pokemon) => {
                 //HAS SECOND EVOLUTION?
                 if (evos.chain.evolves_to[0].evolves_to.length === 1) {
                     //SECOND EVOLUTION:
-                    const id = evos.chain.evolves_to[0].evolves_to[0].species.url.slice(-4).replace("/", "").replace("/", "");
                     const name = evos.chain.evolves_to[0].evolves_to[0].species.name
+                    const id = await getPokemonId(name)
                     console.log("2 EVOLUCION: " + name + " ID: " + id);
                     const pokemon = { name, id }
                     evolutions.push(pokemon)
@@ -153,9 +154,9 @@ const Pokemon = async (pokemon) => {
                 // MULTIPLE SECOND EVOLUTIONS
                 else if (evos.chain.evolves_to[0].evolves_to.length > 1) {
                     console.log("EVOLUCIONES MULTIPLES CAMINOS");
-                    evos.chain.evolves_to[0].evolves_to.forEach(e => {
-                        const id = e.species.url.slice(-4).replace("/", "").replace("/", "")
+                    evos.chain.evolves_to[0].evolves_to.forEach(async e => {
                         const name = e.species.name
+                        const id = await getPokemonId(name)
                         console.log("POSIBLE EVOLUCION: " + name + " ID: " + id);
                         const pokemon = { name, id }
                         multiEvos.push(pokemon)
@@ -166,14 +167,14 @@ const Pokemon = async (pokemon) => {
             // MULTIPLE EVOLUTIONS
             else if (evos.chain.evolves_to.length > 1) {
                 console.log("EVOLUCIONES MULTIPLES CAMINOS");
-                const id = evos.chain.species.url.slice(-4).replace("/", "").replace("/", "");
                 const name = evos.chain.species.name
+                const id = await getPokemonId(name)
                 console.log("POKEMON BASE: " + evos.chain.species.name + " ID: " + id);
                 const pokemon = { name, id }
                 evolutions.push(pokemon)
-                evos.chain.evolves_to.forEach(e => {
-                    const id = e.species.url.slice(-4).replace("/", "").replace("/", "");
+                evos.chain.evolves_to.forEach(async e => {
                     const name = e.species.name
+                    const id = await getPokemonId(name)
                     console.log("POSIBLE EVOLUCION: " + name + " ID: " + id);
                     const pokemon = { name, id }
                     multiEvos.push(pokemon)

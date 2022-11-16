@@ -22,11 +22,19 @@ const TypePanel = ({ props }) => {
     //---------------------------------------
     return (<>
         {types ? (<ul className='types-box'> {types.map((type) => (
-            < li key={type.name} > <img src={images[`${type.name}.png`]} className="type-card" alt={type.name} /></li>
+            < li key={type.name} > <img src={images[`${type.name}.svg`]} className={`typeIcon ${type.name}`} alt={type.name} /></li>
         ))}</ul>) : ("NO DATA")
         }
     </>
     )
+
+    // return (<>
+    //     {types ? (<ul className='types-box'> {types.map((type) => (
+    //         < li key={type.name} > <img src={images[`${type.name}.svg`]} className="type-card" alt={type.name} /></li>
+    //     ))}</ul>) : ("NO DATA")
+    //     }
+    // </>
+    // )
 }
 
 export default TypePanel;
